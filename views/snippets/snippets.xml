@@ -1,0 +1,26 @@
+<odoo>
+
+    <template id="yourhome_snippets" inherit_id="website.snippets">
+
+        <!-- Add YourHome group -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            
+            <t snippet-group="arabian"
+               t-snippet="website.s_snippet_group"
+               string="arabian"
+               />
+        
+        </xpath>
+
+        <!-- Add snippet inside Structure -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+
+            <t t-snippet="arabian_website.property_agent"
+               string="Your Banner"
+               group="arabian"/>
+
+        </xpath>
+
+    </template>
+
+</odoo>

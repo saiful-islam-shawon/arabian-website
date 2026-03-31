@@ -1,0 +1,9 @@
+<odoo>
+
+    <template id="arabian_website" inherit_id="website.layout" name="arabian_website">
+        <xpath expr="//body" position="attributes">
+            <attribute name="class">Arabian Website</attribute>
+        </xpath>
+    </template>
+
+</odoo>

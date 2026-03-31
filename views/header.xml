@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="header"
+              inherit_id="website.template_header_default"
+              name="Arabian Store – Two-Row Flat Header"
+              active="True">
+
+        <xpath expr="//t[@t-call='website.navbar']" position="replace">
+
+            <t t-call="website.navbar">
+                <t t-set="_navbar_classes"
+                   t-valuef="zc-navbar navbar-light d-none d-lg-block"/>
+
+                <div class="zc-header-wrapper">
+                    <div class="zc-floating-header">
+
+                        <!-- ── ROW 1: Logo │ Search │ Actions ── -->
+                        <div class="zc-header-top">
+
+                            <!-- LOGO -->
+                            <t t-call="website.placeholder_header_brand">
+                                <t t-set="_link_class"
+                                   t-valuef="zc-logo navbar-brand"/>
+                            </t>
+
+                            <!-- SEARCH BAR -->
+                            <form class="zc-search-form"
+                                  action="/shop"
+                                  method="GET"
+                                  role="search">
+                                <input
+                                    type="text"
+                                    name="search"
+                                    class="zc-search-input"
+                                    placeholder="Search product"
+                                    autocomplete="off"/>
+                                <button type="submit"
+                                        class="zc-search-btn"
+                                        aria-label="Search">
+                                    <i class="fa fa-search"/>
+                                </button>
+                            </form>
+
+                            <!-- LOGIN + CART -->
+                            <div class="zc-top-actions">
+
+                                <t t-if="request.session.uid">
+                                    <a href="/my/home" class="zc-action-link">
+                                        <i class="fa fa-user-o"/>
+                                        <span>My Account</span>
+                                    </a>
+                                </t>
+                                <t t-else="">
+                                    <a href="/web/login" class="zc-action-link">
+                                        <i class="fa fa-user-o"/>
+                                        <span>Login</span>
+                                    </a>
+                                </t>
+
+                                <a href="/shop/cart"
+                                   class="zc-cart-link o_wsale_my_cart"
+                                   title="My Cart">
+                                    <i class="fa fa-shopping-cart"/>
+                                    <span class="badge zc-cart-badge
+                                                 o_cart_quantity
+                                                 my_cart_quantity">0</span>
+                                </a>
+
+                            </div>
+                        </div>
+                        <!-- /.zc-header-top -->
+
+                        <!-- ── DIVIDER ── -->
+                        <div class="zc-header-divider"/>
+
+                        <!-- ── ROW 2: [spacer] Nav [center] │ Phone [right] ── -->
+                        <div class="zc-header-bottom">
+
+                            <!-- NAV WRAPPER — allows CSS centering independent of phone block -->
+                            <div class="zc-nav-wrapper">
+                                <ul class="zc-nav">
+                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                        <t t-call="website.submenu">
+                                            <t t-set="item_class" t-value="'nav-item'"/>
+                                            <t t-set="link_class" t-value="'nav-link'"/>
+                                        </t>
+                                    </t>
+                                </ul>
+                            </div>
+
+                            <!-- PHONE / SUPPORT — plain, no background -->
+                            <div class="zc-support">
+                                <i class="fa fa-headphones zc-support-icon"/>
+                                <div class="zc-support-info">
+                                    <a href="tel:09666767673" class="zc-phone-number">
+                                        09666 767673
+                                    </a>
+                                    <span class="zc-support-label">Support Center</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.zc-header-bottom -->
+
+                    </div>
+                </div>
+
+            </t>
+
+        </xpath>
+
+    </template>
+
+</odoo>

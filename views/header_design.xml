@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="custom_header" inherit_id="website.layout" name="Custom Header">
+        <xpath expr="//header" position="replace">
+            <header class="bg-light py-3 shadow-sm">
+                <div class="container d-flex justify-content-between align-items-center">
+
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/" class="d-block">
+                            <img src="/arabian_website/static/src/img/logo.webp" alt="Logo" class="img-fluid" style="height:50px;"/>
+                        </a>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <nav class="d-none d-md-block">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link text-dark">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link text-dark">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/blog" class="nav-link text-dark">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/shop" class="nav-link text-dark">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contactus" class="nav-link text-dark">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="d-md-none">
+                        <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                            ☰
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Mobile Menu -->
+                <div class="collapse" id="mobileMenu">
+                    <ul class="nav flex-column text-center bg-light p-3">
+                        <li class="nav-item"><a href="/" class="nav-link text-dark">Home</a></li>
+                        <li class="nav-item"><a href="/about" class="nav-link text-dark">About</a></li>
+                        <li class="nav-item"><a href="/blog" class="nav-link text-dark">Blog</a></li>
+                        <li class="nav-item"><a href="/shop" class="nav-link text-dark">Shop</a></li>
+                        <li class="nav-item"><a href="/contactus" class="nav-link text-dark">Contact</a></li>
+                    </ul>
+                </div>
+
+            </header>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,98 @@
+<odoo>
+    <template id="custom_footer" inherit_id="website.layout" name="Custom Footer">
+
+        <!-- পুরো footer replace -->
+        <xpath expr="//footer" position="replace">
+            <footer class="pt-5 pb-3" style="background-color: #F5EFE8;">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Company Info -->
+                        <div class="col-md-3">
+                            <img src="/arabian_website/static/src/img/logo.webp"></img>
+                            <p>
+                                ৪৩/২ পশ্চিম চৌধুরীপাড়া, মালিবাগ, ঢাকা। (আবুল হোটেল থেকে রামপুরার
+                                দিকে যেতে উত্তরা ব্যাংকের অপজিটে মধুবাগের গলি, নূর মসজিদের
+                                উত্তরগেইট‍)
+                            </p>
+                            <p>Email: hello@arabianstorebd.com</p>
+                            <p>Call: 09666767673</p>
+                            <p>Phone: 01898828684</p>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="col-md-3">
+                            <h5>Quick Links</h5>
+                            <ul class="list-unstyled mt-4">
+                                <li>
+                                    <h6 class="my-3"><a href="/" class="text-dark">Home</a></h6>
+                                </li>
+                                <li>
+                                    <h6 class="my-3"><a href="#" class="text-dark">About</a></h6>
+                                </li>
+                                <li>
+                                    <h6 class="my-3"><a href="#" class="text-dark">Blog</a></h6>
+                                </li>
+                                <li>
+                                    <h6 class="my-3"><a href="/shop" class="text-dark">Shop</a></h6>
+                                </li>
+                                <li>
+                                    <h6 class="my-3"><a href="/contactus" class="text-dark">Contact</a></h6>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- legal and policy -->
+                        <div class="col-md-3">
+                            <h5>Legal and Policy Links</h5>
+                            <ul class="list-unstyled mt-4">
+                                <li>
+                                    <h6 class="my-3"><a href="#" class="text-dark">Privacy Policy</a></h6>
+                                </li>
+                                <li>
+                                    <h6 class="my-3"><a href="#" class="text-dark">Return &amp; Refund Policy</a></h6>
+                                </li>
+                                <li>
+                                    <h6 class="my-3"><a href="#" class="text-dark">Terms &amp; Conditions</a></h6>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Follow us -->
+                        <div class="col-md-3">
+                            <h5>Follow Us</h5>
+                            <div class="fb-container mt-4">
+                                <!-- স্ক্রোলযোগ্য ফেসবুক ফিড বক্স -->
+                                <div class="feed-box">
+                                    <div class="fb-iframe-container">
+                                        <!-- ফেসবুক অফিসিয়াল পেজ প্লাগইন আইফ্রেম -->
+                                        <iframe
+                                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F340099377226171&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
+                                            width="340"
+                                            height="400"
+                                            style="border:none;overflow:hidden"
+                                            scrolling="no"
+                                            frameborder="0"
+                                            allowfullscreen="true"
+                                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom -->
+                    <div class="text-center mt-4 border-top pt-3">
+                        <p class="mb-0">
+                            © 2026 Arabian Store BD. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+
+    </template>
+</odoo>
