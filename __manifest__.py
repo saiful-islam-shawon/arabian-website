@@ -40,6 +40,5 @@
     'application': False,
     'installable': True,
     'auto_install': False,
-    'theme': True,
     'license': 'LGPL-3',
 }

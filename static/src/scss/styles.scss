@@ -33,6 +33,25 @@
 }
 
 
+// mobile view
+
+@media (max-width: 768px) {
+
+    .carousel-item img {
+        height: 220px;   // 500 → 220
+    }
+
+    .banner-item1 img {
+        height: 160px;   // 300 → 160
+    }
+
+    .banner-item2 img {
+        height: 120px;   // 190 → 120
+    }
+
+}
+
+
 // --------------------------------------------------
 
 
@@ -301,8 +320,8 @@
 .zc-nav .nav-item { position: relative; }
 
 .zc-nav .nav-link {
-    font-size:     14px;
-    font-weight:   500;
+    font-size:     20px;
+    font-weight:   600;
     color:         var(--zc-text) !important;
     padding:       7px 14px !important;
     border-radius: 8px;
@@ -353,6 +372,23 @@
 @keyframes zcDropIn {
     from { opacity: 0; transform: translateY(-5px); }
     to   { opacity: 1; transform: translateY(0);    }
+}
+
+
+/* Mega Menu Heading */
+.o_mega_menu h4,
+.o_mega_menu .dropdown-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Mega Menu Items */
+.o_mega_menu .nav-link,
+.o_mega_menu .dropdown-item {
+    font-size: 16px;
+    padding: 5px 8px;
+    line-height: 1.4;
 }
 
 
