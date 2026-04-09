@@ -9,99 +9,395 @@
         <!-- Replace Navbar -->
         <xpath expr="//header" position="replace">
 
-            <header>
+            <header class="header-main sticky-top">
 
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
+                <!-- menu for mobile -->
+                <div class="mobile d-none mx-3">
+                    <!-- Left: Menu Button -->
+                    <div>
+                        <button class="nav-icon-btn" type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#mobileMenu"
+                            aria-label="Menu">
 
-                        <div class="d-flex flex-column w-100">
-                            <div class="d-flex">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
 
-                                <div class="ms-5 me-5">
+                    <!-- Mobile Menu Offcanvas -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
 
-                                    <!-- Logo -->
-                                    <t t-call="website.placeholder_header_brand">
-                                        <t t-set="_link_class"
-                                            t-value="'navbar-brand zc-logo'" />
-                                    </t>
+                        <!-- Header -->
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="offcanvas-body">
+
+                            <!-- menu item1 -->
+                            <div class="mobile-item">
+
+                                <!-- Header -->
+                                <div class="mobile-header d-flex justify-content-between align-items-center"
+                                    data-bs-toggle="collapse" data-bs-target="#menu1">
+
+                                    <!-- LEFT SIDE -->
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="arabian_website/static/src/img/dates.webp"
+                                            style="width: 18px; height: 18px;" alt="dates"/>
+                                        <span class="menu-title">Arabian Dates (খেজুর)</span>
+                                    </div>
+                                    <span class="toggle-icon">+</span>
 
                                 </div>
 
-                                <div>
+                                <!-- Dropdown -->
+                                <div id="menu1" class="collapse mobile-dropdown">
 
-                                    <button class="navbar-toggler" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#navbarSupportedContent"
-                                        aria-controls="navbarSupportedContent" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse"
-                                        id="navbarSupportedContent">
-                                        <!-- Menu -->
-                                        <ul class="navbar-nav mx-auto">
-                                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
-                                                <t t-call="website.submenu">
-                                                    <t t-set="item_class" t-value="'nav-item'" />
-                                                    <t t-set="link_class" t-value="'nav-link'" />
-                                                </t>
-                                            </t>
+                                    <div class="mobile-row">
 
-                                        </ul>
+                                        <!-- Column 1 -->
+                                        <div class="mobile-col">
+                                            <a href="#">Ajwa (আজওয়া)</a>
+                                            <a href="#">Mabrum (মাবরুম)</a>
+                                            <a href="#">Sukkari (সুক্কারি)</a>
+                                            <a href="#">Dates Combo (খেজুর কম্বো)</a>
+                                        </div>
 
-                                        <!-- Search -->
-                                        <form action="/shop" method="GET" class="d-flex me-5">
-                                            <input type="text" name="search"
-                                                class="form-control me-2"
-                                                placeholder="Search products" />
-                                            <button class="btn btn-primary">Search</button>
-                                        </form>
-
-                                        <!-- Login -->
-                                        <t t-if="request.session.uid">
-                                            <a href="/my/home" class="nav-link">My Account</a>
-                                        </t>
-                                        <t t-else="">
-                                            <a href="/web/login" class="nav-link">Login</a>
-                                        </t>
-
-                                        <!-- Cart -->
-                                        <a href="/shop/cart"
-                                            class="zc-cart-link o_wsale_my_cart ms-5"
-                                            title="My Cart">
-                                            <i class="fa fa-shopping-cart" />
-                                            <span
-                                                class="badge zc-cart-badge o_cart_quantity my_cart_quantity">
-                                                0</span>
-                                        </a>
                                     </div>
 
                                 </div>
 
+                            </div>
+
+                            <!-- menu item2 -->
+                            <div class="mobile-item">
+
+                                <!-- Header -->
+                                <div class="mobile-header d-flex justify-content-between align-items-center"
+                                    data-bs-toggle="collapse" data-bs-target="#menu2">
+
+                                    <span>🍃 Arabian Dates (খেজুর)</span>
+                                    <span class="toggle-icon">+</span>
+
+                                </div>
+
+                                <!-- Dropdown -->
+                                <div id="menu2" class="collapse mobile-dropdown">
+
+                                    <div class="mobile-row">
+
+                                        <!-- Column 1 -->
+                                        <div class="mobile-col">
+                                            <a href="#">Ajwa (আজওয়া)</a>
+                                            <a href="#">Mabrum (মাবরুম)</a>
+                                            <a href="#">Sukkari (সুক্কারি)</a>
+                                            <a href="#">Dates Combo (খেজুর কম্বো)</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
 
                             </div>
 
-                            <hr></hr>
+                            <!-- menu item3 -->
+                            <div class="mobile-item">
 
-                            <div class="mx-auto">
+                                <!-- Header -->
+                                <div class="mobile-header d-flex justify-content-between align-items-center"
+                                    data-bs-toggle="collapse" data-bs-target="#menu3">
 
-                                <!-- Menu -->
-                                <ul class="navbar-nav">
-                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
-                                        <t t-call="website.submenu">
-                                            <t t-set="item_class" t-value="'nav-item'" />
-                                            <t t-set="link_class" t-value="'nav-link'" />
-                                        </t>
-                                    </t>
+                                    <span>🍃 Arabian Dates (খেজুর)</span>
+                                    <span class="toggle-icon">+</span>
 
-                                </ul>
+                                </div>
 
+                                <!-- Dropdown -->
+                                <div id="menu3" class="collapse mobile-dropdown">
+
+                                    <div class="mobile-row">
+
+                                        <!-- Column 1 -->
+                                        <div class="mobile-col">
+                                            <a href="#">Ajwa (আজওয়া)</a>
+                                            <a href="#">Mabrum (মাবরুম)</a>
+                                            <a href="#">Sukkari (সুক্কারি)</a>
+                                            <a href="#">Dates Combo (খেজুর কম্বো)</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Need Help Section -->
+                            <div class="mobile-help-section">
+
+                                <h6 class="mobile-help-title">Need Help?</h6>
+
+                                <p class="mobile-help-text">
+                                    ৭/৪ পশ্চিম হাজীপাড়া, রামপুরা, ঢাকা (হাজীপাড়া স্কুল পাশের বাবার অফিসের গলি)
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Logo - Using shawon.png -->
+                    <div class="col-auto">
+                        <t t-call="website.placeholder_header_brand">
+                            <t t-set="_link_class" t-value="'navbar-brand logo-img'"/>
+                        </t>
+                    </div>
+                    
+
+                    <!-- Right: Search and Cart -->
+                    <div class="d-flex align-items-center">
+                        <!-- search icon -->
+                        <button class="nav-icon-btn me-2" type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#mobileSearch"
+                            aria-label="Search">
+                            
+                            <i class="fa fa-search"></i>
+                        </button>
+
+                        <!-- Mobile Search Offcanvas -->
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileSearch">
+
+                            <!-- Header -->
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title">Search our site</h5>
+                                <button type="button" class="btn-close text-dark" data-bs-dismiss="offcanvas"></button>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="offcanvas-body">
+
+                                <!-- Search Input -->
+                                <form action="/shop" method="GET" class="mb-4 search-box">
+
+                                    <input type="text" name="search"
+                                        class="form-control"
+                                        placeholder="Search product"/>
+
+                                    <!-- Clickable icon -->
+                                    <button type="submit" class="search-icon-btn">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+
+                                </form>
+
+                                <!-- Quick Links -->
+                                <div>
+                                    <h6 class="mb-3">Quick links</h6>
+
+                                    <a href="#" class="d-block mb-2">Arabian Dates (খেজুর)</a>
+                                    <a href="#" class="d-block mb-2">Arabian Chocolate (চকলেট)</a>
+                                    <a href="#" class="d-block mb-2">Arabian Item</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h6>Need some inspirations?</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <!-- cart add -->
+                        <div class="cart-icon-wrapper position-relative">
+                            <a href="/shop/cart"
+                            class="nav-icon-btn o_wsale_my_cart text-decoration-none"
+                            title="My Cart">
+
+                                <i class="fa fa-shopping-cart"></i>
+
+                                <span class="cart-badge o_cart_quantity my_cart_quantity">
+                                    0
+                                </span>
+
+                            </a>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+                <!-- this is for window -->
+                <!-- Main Header -->
+                <div class="container py-2 d-sm-none d-md-block shuvo">
+                    <div class="row align-items-center">
+                        <!-- Logo - Using shawon.png -->
+                        <div class="col-auto">
+                            <t t-call="website.placeholder_header_brand">
+                                <t t-set="_link_class" t-value="'navbar-brand logo-img'"/>
+                            </t>
+                        </div>
+
+                        <!-- Search Bar -->
+                        <div class="col mx-lg-4 d-none d-md-block">
+                            <form action="/shop" method="GET" class="position-relative search-container">
+
+                                <input type="text" 
+                                    name="search"
+                                    class="form-control" 
+                                    placeholder="Search product"/>
+
+                                <button type="submit" class="btn gold-bg search-btn">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </form>
+                        </div>
+
+                        <!-- User Actions -->
+                        <div class="col-auto d-flex align-items-center">
+
+                            <t t-if="request.session.uid">
+                                <a href="/my/home" class="d-flex align-items-center text-decoration-none">
+                                    <i class="fa fa-user action-icon me-2"></i>
+                                    <span class="fw-bold navy-text small">My Account</span>
+                                </a>
+                            </t>
+                            <t t-else="">
+                                <a href="/web/login" class="d-flex align-items-center text-decoration-none">
+                                    <i class="fa fa-user action-icon me-2"></i>
+                                    <span class="fw-bold navy-text small">Login</span>
+                                </a>
+                            </t>
+
+                            <div class="vr me-4 ms-4 text-dark" style="height: 30px;"></div>
+
+                            <a href="/shop/cart"
+                            class="position-relative o_wsale_my_cart text-decoration-none"
+                            title="My Cart">
+
+                                <i class="fa fa-shopping-cart action-icon"></i>
+
+                                <span class="badge cart-badge o_cart_quantity my_cart_quantity">
+                                    0
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Navigation Bar -->
+                <div class="border-top d-sm-none d-lg-block shuvo">
+                    <div
+                        class="container d-flex flex-wrap align-items-center">
+
+                        <!-- Menu Items -->
+                        <nav class="d-flex align-items-center mx-auto">
+                            <!-- Dropdown Item -->
+                            <div class="nav-item-custom me-4">
+                                <div class="nav-link-text d-flex align-items-center">
+                                    <img
+                                        src="arabian_website/static/src/img/dates.webp"
+                                        class="me-2" style="width: 16px; height: 16px;" alt="dates"/>
+                                    <span>Arabian Dates (খেজুর)</span>
+                                    <i class="fas fa-chevron-down ms-2"
+                                        style="font-size: 10px; color: #999;"></i>
+                                </div>
+                                <!-- Mega Dropdown -->
+                                <div class="mega-dropdown">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a href="#" class="dropdown-item-link">Ajwa (আজওয়া)</a>
+                                            <a href="#" class="dropdown-item-link">Mabrum (মাবরুম)</a>
+                                            <a href="#" class="dropdown-item-link">Sukkari (সুকারী)</a>
+                                            <a href="#" class="dropdown-item-link">Dates Combo
+                                                (খেজুর কম্বো)</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="#" class="dropdown-item-link">Medjool (মেডজুল)</a>
+                                            <a href="#" class="dropdown-item-link">Ambar (আম্বার)</a>
+                                            <a href="#" class="dropdown-item-link">Safabi/Kalmi
+                                                (সাফাবি/কালমি)</a>
+                                            <a href="#" class="dropdown-item-link">অন্যান্য</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dropdown Item -->
+                            <div class="nav-item-custom me-4">
+                                <div class="nav-link-text d-flex align-items-center">
+                                    <span>Arabian Chocolate (চকলেট)</span>
+                                    <i class="fas fa-chevron-down ms-2"
+                                        style="font-size: 10px; color: #999;"></i>
+                                </div>
+                                <!-- Mega Dropdown -->
+                                <div class="mega-dropdown dropdown-2">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a href="#" class="dropdown-item-link">Saudi Chocolate (সৌদি চকলেট)</a>
+                                            <a href="#" class="dropdown-item-link">Dubai (দুবাই চকলেট)</a>
+                                            <a href="#" class="dropdown-item-link">মিশরি চকলেট</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="#" class="dropdown-item-link">তুর্কি চকলেট</a>
+                                            <a href="#" class="dropdown-item-link">চকলেট কম্বো</a>
+                                            <a href="#" class="dropdown-item-link">অন্যান্য</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dropdown Item -->
+                            <div class="nav-item-custom me-4">
+                                <div class="nav-link-text d-flex align-items-center">
+                                    <span>Arabian Item</span>
+                                    <i class="fas fa-chevron-down ms-2"
+                                        style="font-size: 10px; color: #999;"></i>
+                                </div>
+                                <!-- Mega Dropdown -->
+                                <div class="mega-dropdown dropdown-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a href="#" class="dropdown-item-link">ডেট্স পাউডার/সুগার</a>
+                                            <a href="#" class="dropdown-item-link">ডেট্স সিরাপ</a>
+                                            <a href="#" class="dropdown-item-link">ডেট্স জুস</a>
+                                            <a href="#" class="dropdown-item-link">ডেট্স পেস্ট</a>
+                                            <a href="#" class="dropdown-item-link">ত্বীন ফল</a>
+                                            <a href="#" class="dropdown-item-link">যাইতুন</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="#" class="dropdown-item-link">গাওয়া</a>
+                                            <a href="#" class="dropdown-item-link">তাহিনা</a>
+                                            <a href="#" class="dropdown-item-link">হালবা</a>
+                                            <a href="#" class="dropdown-item-link">দুখনা</a>
+                                            <a href="#" class="dropdown-item-link">অলিভ ওয়েল</a>
+                                            <a href="#" class="dropdown-item-link">ডেট্স হালুয়া</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </nav>
+
+                        <!-- Contact Support -->
+                        <div class="d-flex align-items-center py-2">
+                            <i class="fas fa-headset fs-2 text-dark me-3"></i>
+                            <div class="d-flex flex-column">
+                                <span class="gold-text support-number">09666 767673</span>
+                                <span class="support-label">Support Center</span>
                             </div>
                         </div>
 
                     </div>
-                </nav>
-
+                </div>
             </header>
 
 

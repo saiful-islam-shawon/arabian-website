@@ -23,6 +23,9 @@
         
         # 🟢 Frontend Assets
         'web.assets_frontend': [
+            
+            # Font Awesome (IMPORTANT)
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
 
             # ✅ External CSS
             'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css',
