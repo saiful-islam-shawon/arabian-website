@@ -4,7 +4,7 @@
     'category': 'Theme/Creative',
     'version': '1.0',
     'author': 'Saiful Islam Shawon',
-    'depends': ['website'],
+    'depends': ['website', 'website_sale'],
     'data': [
         'views/theme.xml',
         'views/homepage.xml',

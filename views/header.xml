@@ -1,112 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <template id="header"
-              inherit_id="website.template_header_default"
-              name="Arabian Store – Two-Row Flat Header"
-              active="True">
+    <!-- Custom Header -->
+    <template id="custom_header"
+        inherit_id="website.template_header_default"
+        name="website learning module">
 
-        <xpath expr="//t[@t-call='website.navbar']" position="replace">
+        <!-- Replace Navbar -->
+        <xpath expr="//header" position="replace">
 
-            <t t-call="website.navbar">
-                <t t-set="_navbar_classes"
-                   t-valuef="zc-navbar navbar-light d-none d-lg-block"/>
+            <header>
 
-                <div class="zc-header-wrapper">
-                    <div class="zc-floating-header">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
 
-                        <!-- ── ROW 1: Logo │ Search │ Actions ── -->
-                        <div class="zc-header-top">
+                        <div class="d-flex flex-column w-100">
+                            <div class="d-flex">
 
-                            <!-- LOGO -->
-                            <t t-call="website.placeholder_header_brand">
-                                <t t-set="_link_class"
-                                   t-valuef="zc-logo navbar-brand"/>
-                            </t>
+                                <div class="ms-5 me-5">
 
-                            <!-- SEARCH BAR -->
-                            <form class="zc-search-form"
-                                  action="/shop"
-                                  method="GET"
-                                  role="search">
-                                <input
-                                    type="text"
-                                    name="search"
-                                    class="zc-search-input"
-                                    placeholder="Search product"
-                                    autocomplete="off"/>
-                                <button type="submit"
-                                        class="zc-search-btn"
-                                        aria-label="Search">
-                                    <i class="fa fa-search"/>
-                                </button>
-                            </form>
+                                    <!-- Logo -->
+                                    <t t-call="website.placeholder_header_brand">
+                                        <t t-set="_link_class"
+                                            t-value="'navbar-brand zc-logo'" />
+                                    </t>
 
-                            <!-- LOGIN + CART -->
-                            <div class="zc-top-actions">
+                                </div>
 
-                                <t t-if="request.session.uid">
-                                    <a href="/my/home" class="zc-action-link">
-                                        <i class="fa fa-user-o"/>
-                                        <span>My Account</span>
-                                    </a>
-                                </t>
-                                <t t-else="">
-                                    <a href="/web/login" class="zc-action-link">
-                                        <i class="fa fa-user-o"/>
-                                        <span>Login</span>
-                                    </a>
-                                </t>
+                                <div>
 
-                                <a href="/shop/cart"
-                                   class="zc-cart-link o_wsale_my_cart"
-                                   title="My Cart">
-                                    <i class="fa fa-shopping-cart"/>
-                                    <span class="badge zc-cart-badge
-                                                 o_cart_quantity
-                                                 my_cart_quantity">0</span>
-                                </a>
+                                    <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse"
+                                        id="navbarSupportedContent">
+                                        <!-- Menu -->
+                                        <ul class="navbar-nav mx-auto">
+                                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                                <t t-call="website.submenu">
+                                                    <t t-set="item_class" t-value="'nav-item'" />
+                                                    <t t-set="link_class" t-value="'nav-link'" />
+                                                </t>
+                                            </t>
+
+                                        </ul>
+
+                                        <!-- Search -->
+                                        <form action="/shop" method="GET" class="d-flex me-5">
+                                            <input type="text" name="search"
+                                                class="form-control me-2"
+                                                placeholder="Search products" />
+                                            <button class="btn btn-primary">Search</button>
+                                        </form>
+
+                                        <!-- Login -->
+                                        <t t-if="request.session.uid">
+                                            <a href="/my/home" class="nav-link">My Account</a>
+                                        </t>
+                                        <t t-else="">
+                                            <a href="/web/login" class="nav-link">Login</a>
+                                        </t>
+
+                                        <!-- Cart -->
+                                        <a href="/shop/cart"
+                                            class="zc-cart-link o_wsale_my_cart ms-5"
+                                            title="My Cart">
+                                            <i class="fa fa-shopping-cart" />
+                                            <span
+                                                class="badge zc-cart-badge o_cart_quantity my_cart_quantity">
+                                                0</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+
 
                             </div>
-                        </div>
-                        <!-- /.zc-header-top -->
 
-                        <!-- ── DIVIDER ── -->
-                        <div class="zc-header-divider"/>
+                            <hr></hr>
 
-                        <!-- ── ROW 2: [spacer] Nav [center] │ Phone [right] ── -->
-                        <div class="zc-header-bottom">
+                            <div class="mx-auto">
 
-                            <!-- NAV WRAPPER — allows CSS centering independent of phone block -->
-                            <div class="zc-nav-wrapper">
-                                <ul class="zc-nav">
+                                <!-- Menu -->
+                                <ul class="navbar-nav">
                                     <t t-foreach="website.menu_id.child_id" t-as="submenu">
                                         <t t-call="website.submenu">
-                                            <t t-set="item_class" t-value="'nav-item'"/>
-                                            <t t-set="link_class" t-value="'nav-link'"/>
+                                            <t t-set="item_class" t-value="'nav-item'" />
+                                            <t t-set="link_class" t-value="'nav-link'" />
                                         </t>
                                     </t>
+
                                 </ul>
-                            </div>
 
-                            <!-- PHONE / SUPPORT — plain, no background -->
-                            <div class="zc-support">
-                                <i class="fa fa-headphones zc-support-icon"/>
-                                <div class="zc-support-info">
-                                    <a href="tel:09666767673" class="zc-phone-number">
-                                        09666 767673
-                                    </a>
-                                    <span class="zc-support-label">Support Center</span>
-                                </div>
                             </div>
-
                         </div>
-                        <!-- /.zc-header-bottom -->
 
                     </div>
-                </div>
+                </nav>
 
-            </t>
+            </header>
+
 
         </xpath>
 
