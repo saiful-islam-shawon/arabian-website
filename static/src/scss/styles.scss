@@ -1,19 +1,25 @@
+
+// arabian snippet on window view
+
 .carousel-item img{
-    width: 100%;        
-    height: 500px;      
-    object-fit: cover;
+    width: 676px;        
+    height: 510px;
+    border-radius: 20px;
+    border: 1px solid rgb(179, 176, 176);      
 }
 
 .banner-item1 img {
-    width: 100%;        
-    height: 300px;  
-    object-fit: cover;
+    width: 649px;        
+    height: 342px;
+    border-radius: 15px;
+    border: 1px solid rgb(179, 176, 176);  
 }
 
 .banner-item2 img {
-    width: 100%;        
-    height: 190px;  
-    object-fit: cover;
+    width: 315px;        
+    height: 159px;
+    border-radius: 10px;
+    border: 1px solid rgb(179, 176, 176);  
 }
 
 .banner-item {
@@ -31,6 +37,33 @@
 .banner-item:hover {
     cursor: pointer;
 }
+
+// arabian snippet on mobile view
+
+@media (max-width: 576px) {
+
+    .carousel-item img {
+        height: 220px;   // 500 → 220
+    }
+
+    .banner-item1 img {
+        height: 160px;
+        border-radius: 10px;
+    }
+
+    .snippet-img{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner-item2 img {
+        height: 160px;
+        width: 360px;
+        margin-bottom: 7px;
+    }
+
+}
+
 
 // /////////////////////////
 
@@ -364,26 +397,65 @@ body {
 }
 
 
-// header mobile view end
+
+// /////////////////////////////////////////////////
 
 
+// footer design
 
-// mobile view
+@media (max-width: 576px) {
 
-@media (max-width: 768px) {
-
-    .carousel-item img {
-        height: 220px;   // 500 → 220
-    }
-
-    .banner-item1 img {
-        height: 160px;   // 300 → 160
-    }
-
-    .banner-item2 img {
-        height: 120px;   // 190 → 120
+    /* Center entire section */
+    .fb-container {
+        text-align: center;
     }
 
 }
+
+////////////////////
+
+/* Wrapper */
+.cart-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hide Odoo's default SVG */
+.o_wsale_my_cart svg {
+    display: none !important;
+}
+
+/* Custom FA cart icon */
+.o_wsale_my_cart::before {
+    content: "\f07a";
+    font-family: "FontAwesome";
+    font-size: 24px;
+    color: #1a2e4a;
+}
+
+/* Hover effect */
+.o_wsale_my_cart:hover::before {
+    color: #c8960c;
+}
+
+/* Badge - top right of icon */
+.cart-icon-wrapper .my_cart_quantity {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #c8960c;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+}
+
 
 

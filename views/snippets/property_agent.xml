@@ -40,11 +40,11 @@
                             <div class="banner-item1 banner-item">
                                 <img src="https://arabianstorebd.com/wp-content/uploads/2025/07/Arabian_Website_Mejool2.webp" class="img-fluid"/>
                             </div>
-                            <div class="d-flex mt-2">
-                                <div class="col-lg-6 banner-item2 banner-item me-1">
+                            <div class="d-flex mt-2 snippet-img">
+                                <div class="banner-item2 banner-item me-lg-1">
                                     <img src="https://arabianstorebd.com/wp-content/uploads/2025/06/984.webp" class="img-fluid"/>
                                 </div>
-                                <div class="col-lg-6 banner-item2 banner-item ms-1">
+                                <div class="banner-item2 banner-item ms-lg-1">
                                     <img src="https://arabianstorebd.com/wp-content/uploads/2025/06/984-2.webp" class="img-fluid"/>
                                 </div>
                             </div>

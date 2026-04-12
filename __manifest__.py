@@ -37,6 +37,7 @@
 
             # ✅ Custom JS
             'arabian_website/static/src/js/slider.js',
+            'arabian_website/static/src/js/cart.js',
         ],
     },
     'images': [],

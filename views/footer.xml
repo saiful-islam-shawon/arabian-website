@@ -21,41 +21,57 @@
                         </div>
 
                         <!-- Quick Links -->
-                        <div class="col-md-3">
-                            <h5>Quick Links</h5>
-                            <ul class="list-unstyled mt-4">
-                                <li>
-                                    <h6 class="my-3"><a href="/" class="text-dark">Home</a></h6>
-                                </li>
-                                <li>
-                                    <h6 class="my-3"><a href="#" class="text-dark">About</a></h6>
-                                </li>
-                                <li>
-                                    <h6 class="my-3"><a href="#" class="text-dark">Blog</a></h6>
-                                </li>
-                                <li>
-                                    <h6 class="my-3"><a href="/shop" class="text-dark">Shop</a></h6>
-                                </li>
-                                <li>
-                                    <h6 class="my-3"><a href="/contactus" class="text-dark">Contact</a></h6>
-                                </li>
-                            </ul>
+                        <div class="col-md-3 footer-item">
+
+                            <!-- Header -->
+                            <div class="footer-title d-flex justify-content-between align-items-center"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#quickLinksMenu">
+
+                                <h5 class="mb-0">Quick Links</h5>
+                                <span class="footer-toggle d-md-none">+</span>
+
+                            </div>
+
+                            <!-- Content -->
+                            <div id="quickLinksMenu" class="collapse d-md-block">
+
+                                <ul class="list-unstyled mt-3">
+                                    <li><a href="/" class="footer-link">Home</a></li>
+                                    <li><a href="#" class="footer-link">About</a></li>
+                                    <li><a href="#" class="footer-link">Blog</a></li>
+                                    <li><a href="/shop" class="footer-link">Shop</a></li>
+                                    <li><a href="/contactus" class="footer-link">Contact</a></li>
+                                </ul>
+
+                            </div>
+
                         </div>
 
                         <!-- legal and policy -->
-                        <div class="col-md-3">
-                            <h5>Legal and Policy Links</h5>
-                            <ul class="list-unstyled mt-4">
-                                <li>
-                                    <h6 class="my-3"><a href="#" class="text-dark">Privacy Policy</a></h6>
-                                </li>
-                                <li>
-                                    <h6 class="my-3"><a href="#" class="text-dark">Return &amp; Refund Policy</a></h6>
-                                </li>
-                                <li>
-                                    <h6 class="my-3"><a href="#" class="text-dark">Terms &amp; Conditions</a></h6>
-                                </li>
-                            </ul>
+                        <div class="col-md-3 footer-item">
+
+                            <!-- Header -->
+                            <div class="footer-title d-flex justify-content-between align-items-center"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#legalMenu">
+
+                                <h5 class="mb-0 my-sm-3">Legal and Policy Links</h5>
+                                <span class="footer-toggle d-md-none">+</span>
+
+                            </div>
+
+                            <!-- Content -->
+                            <div id="legalMenu" class="collapse d-md-block">
+
+                                <ul class="list-unstyled mt-3">
+                                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                                    <li><a href="#" class="footer-link">Return and Refund Policy</a></li>
+                                    <li><a href="#" class="footer-link">Terms and Conditions</a></li>
+                                </ul>
+
+                            </div>
+
                         </div>
 
                         <!-- Follow us -->
@@ -67,7 +83,7 @@
                                     <div class="fb-iframe-container">
                                         <!-- ফেসবুক অফিসিয়াল পেজ প্লাগইন আইফ্রেম -->
                                         <iframe
-                                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F340099377226171&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
+                                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F340099377226171&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
                                             width="340"
                                             height="400"
                                             style="border:none;overflow:hidden"
